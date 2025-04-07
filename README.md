@@ -72,3 +72,51 @@ If you have not installed poetry you find instructions [here](https://python-poe
 * As a customer, I want to be able to view detailed product information, such as price, quantity available, and product description, so that I can make an informed purchase decision.
 * As a customer, I want to be able to add products to my cart so that I can easily keep track of my intended purchases.
 * As an inventory manager, I want to be able to add new products to the system so that they are available for customers to purchase.
+
+
+# Shop Clean Architecture - Refactored Version
+
+This project is a refactored version of the original `be-task-ca` repository with improved modularity and testability using Clean Architecture principles.
+
+## 🔄 Key Improvements
+
+- **Domain-driven structure**: Separation of concerns between entities, use cases, repositories, and delivery.
+- **Clean Architecture alignment**: Core logic is decoupled from frameworks like FastAPI and ORMs like SQLAlchemy.
+- **Pluggable infrastructure**: Easily switch between SQL-based and in-memory repositories.
+- **Swagger docs**: Auto-generated API docs available for testing via FastAPI.
+
+## 🚀 How to Run
+
+### ▶️ With In-Memory Repositories (no DB required)
+
+```bash
+USE_IN_MEMORY=true poetry run start
+```
+
+This mode is great for local development, prototyping, or running tests.
+
+### 🗃️ With SQLAlchemy + PostgreSQL/SQLite
+
+Make sure you’ve configured your database and run:
+
+```bash
+poetry run start
+```
+
+## 🔍 Swagger API Docs
+
+Once the app is running, navigate to:
+
+👉 [http://localhost:8000/docs](http://localhost:8000/docs)
+
+You can test all endpoints (customers, items, carts) interactively.
+
+## 🧪 Tests
+
+```bash
+poetry run test
+```
+
+Includes unit tests for use cases and API integration tests.
+
+---
